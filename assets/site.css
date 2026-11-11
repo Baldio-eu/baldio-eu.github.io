@@ -1,0 +1,19 @@
+/* Páginas de integração (catálogo, lista, adicionar); o mapa tem o seu style.css */
+body { background: #f6f4ee; }
+
+.integration-card { border: 0; color: inherit; text-decoration: none; transition: transform .1s, box-shadow .1s; box-shadow: 0 1px 3px rgba(0, 0, 0, .08); }
+.integration-card:hover { transform: translateY(-3px); box-shadow: 0 6px 16px rgba(0, 0, 0, .1); }
+.integration-icon { width: 64px; height: 64px; border-radius: 46% 54% 52% 48% / 55% 45% 55% 45%; background: #f1ede1; display: flex; align-items: center; justify-content: center; margin-bottom: .75rem; }
+.integration-icon svg { width: 46px; height: 46px; }
+
+.section-label { font-size: .75rem; text-transform: uppercase; letter-spacing: .06em; color: #6c757d; margin-bottom: .5rem; }
+
+.code-box { position: relative; }
+.code-box pre { background: #1f2420; color: #e8eadf; border-radius: .5rem; padding: 1rem; font-size: .8rem; max-height: 520px; overflow: auto; margin: 0; }
+.code-box .btn-copy { position: absolute; top: .5rem; right: .5rem; }
+
+.project-cover { aspect-ratio: 16 / 9; object-fit: cover; background: #e9e4d4; }
+.project-cover-empty { aspect-ratio: 16 / 9; background: linear-gradient(135deg, #2D4C36, #4A7C59); display: flex; align-items: center; justify-content: center; }
+.project-cover-empty svg { width: 56px; height: 56px; opacity: .55; }
+.project-tile { border: 0; overflow: hidden; box-shadow: 0 1px 3px rgba(0, 0, 0, .08); }
+.project-tile a { color: inherit; text-decoration: none; }

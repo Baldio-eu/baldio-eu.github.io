@@ -3,61 +3,99 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Mapa do Baldio</title>
+  <title>Integrações do Baldio</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css" rel="stylesheet">
-  <link href="assets/style.css" rel="stylesheet">
+  <link href="assets/site.css" rel="stylesheet">
 </head>
 <body>
-  <main class="container-fluid py-3">
-    <header class="d-flex flex-wrap align-items-baseline gap-2 mb-3">
-      <h1 class="h4 mb-0">Mapa do Baldio</h1>
-      <span class="text-secondary small">
-        projectos lidos em directo de <a href="https://baldio.eu/baldio.json" target="_blank" rel="noopener">baldio.eu/baldio.json</a>
-        <span id="updated"></span>
-      </span>
+  <main class="container py-5">
+    <header class="mb-5">
+      <h1 class="display-6 mb-2">Integrações do Baldio</h1>
+      <p class="lead text-secondary mb-0">
+        Exemplos para levar os projectos e eventos do <a href="https://baldio.eu" target="_blank" rel="noopener">baldio.eu</a> para o teu site.
+        Cada exemplo tem uma demonstração e código real para copiar.
+      </p>
     </header>
 
-    <div class="row g-3">
-      <div class="col-lg-8">
-        <div class="btn-group btn-group-sm mb-2" role="group" aria-label="Tipo de mapa">
-          <input type="radio" class="btn-check" name="map-kind" id="map-local" value="local" checked>
-          <label class="btn btn-outline-secondary" for="map-local">Local (SVG, sem APIs)</label>
-          <input type="radio" class="btn-check" name="map-kind" id="map-osm" value="osm">
-          <label class="btn btn-outline-secondary" for="map-osm">OpenStreetMap</label>
-        </div>
-        <div id="osm" class="map-osm" hidden></div>
-        <div id="local" class="map-wrap">
-          <svg id="map" role="img" aria-label="Mapa dos projectos do Baldio"></svg>
-          <div class="map-tools btn-group-vertical">
-            <button id="zoom-in" class="btn btn-light btn-sm" title="Aproximar">+</button>
-            <button id="zoom-out" class="btn btn-light btn-sm" title="Afastar">−</button>
-            <button id="zoom-reset" class="btn btn-light btn-sm" title="Ver tudo">⟲</button>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <a class="card integration-card h-100" href="mapa.html">
+          <div class="card-body">
+            <div class="integration-icon">
+              <svg viewBox="0 0 48 48" aria-hidden="true">
+                <path d="M9 30c-3-7 1-17 9-20 7-3 15-1 19 5 4 6 3 14-3 19-6 5-15 6-21 2-2-1-3-3-4-6z" fill="#dfe8cf" stroke="#5E8B3A" stroke-width="1.6"/>
+                <path d="M15 28c-1-5 2-10 7-11 5-1 9 1 10 5 1 4-1 8-5 10-4 2-10 1-12-4z" fill="none" stroke="#5E8B3A" stroke-width="1.1" opacity=".55"/>
+                <path d="M20 25c0-2 2-4 4-4s4 2 3 4-3 3-5 2-2-1-2-2z" fill="none" stroke="#5E8B3A" stroke-width="1.1" opacity=".55"/>
+                <path d="M33 6c-2.6 0-4.6 2-4.6 4.6 0 3.6 4.6 7.6 4.6 7.6s4.6-4 4.6-7.6C37.6 8 35.6 6 33 6z" fill="#c2703d"/>
+                <circle cx="33" cy="10.6" r="1.6" fill="#fff"/>
+              </svg>
+            </div>
+            <h2 class="h5">Mapa de projectos</h2>
+            <p class="text-secondary small mb-3">Todos os projectos num mapa, com lista e filtros. Mapa local em SVG (sem APIs) ou OpenStreetMap.</p>
+            <span class="badge text-bg-light">JS</span> <span class="badge text-bg-light">baldio.json</span>
           </div>
-          <div id="tooltip" class="map-tooltip" hidden></div>
-        </div>
-        <p id="credits-local" class="small text-secondary mt-1 mb-0">Roda do rato para aproximar, arrastar para mover. Mapa: CAOP 2024.1 (DGT) e IGN, via mapas-pt; servido por este site, sem pedidos a terceiros.</p>
-        <p id="credits-osm" class="small text-secondary mt-1 mb-0" hidden>Tiles do OpenStreetMap carregados pelo browser a partir de tile.openstreetmap.org.</p>
+        </a>
       </div>
-
-      <div class="col-lg-4">
-        <div class="d-flex gap-2 mb-2">
-          <input id="search" type="search" class="form-control form-control-sm" placeholder="Nome ou localidade">
-          <select id="type" class="form-select form-select-sm">
-            <option value="">Todos os tipos</option>
-          </select>
-        </div>
-        <div id="count" class="small text-secondary mb-2"></div>
-        <div id="status" class="alert alert-light">A carregar…</div>
-        <div id="list" class="list-group project-list"></div>
+      <div class="col-md-4">
+        <a class="card integration-card h-100" href="projectos.html">
+          <div class="card-body">
+            <div class="integration-icon">
+              <svg viewBox="0 0 48 48" aria-hidden="true">
+                <path d="M5 39c6-2 13-2 19 0s13 2 19 0" fill="none" stroke="#9B7B52" stroke-width="2" stroke-linecap="round"/>
+                <path d="M12 38v-8M24 38V20M36 38v-6" stroke="#5E8B3A" stroke-width="1.8" stroke-linecap="round"/>
+                <path d="M12 32c-4 0-6-2.5-6-5.5 4 0 6 2.5 6 5.5zM12 31c0-3.5 2.5-5.5 5.5-5.5 0 3.5-2.5 5.5-5.5 5.5z" fill="#8bb062"/>
+                <path d="M24 24c-5 0-8-3.5-8-7.5 5 0 8 3.5 8 7.5zM24 22c0-5 3.5-8 7.5-8 0 5-3.5 8-7.5 8z" fill="#5E8B3A"/>
+                <path d="M36 34c-3 0-4.5-2-4.5-4.5 3 0 4.5 2 4.5 4.5zM36 33c0-3 2-4.5 4.5-4.5 0 3-2 4.5-4.5 4.5z" fill="#a9c27f"/>
+              </svg>
+            </div>
+            <h2 class="h5">Lista de projectos com capa</h2>
+            <p class="text-secondary small mb-3">Cartões com imagem, nome, localidade e tipo. Em JS a partir do feed, ou em PHP a partir da API.</p>
+            <span class="badge text-bg-light">JS</span> <span class="badge text-bg-light">PHP + curl</span>
+          </div>
+        </a>
+      </div>
+      <div class="col-md-4">
+        <a class="card integration-card h-100" href="adicionar.html">
+          <div class="card-body">
+            <div class="integration-icon">
+              <svg viewBox="0 0 48 48" aria-hidden="true">
+                <path d="M6 40c7-2.5 15-2.5 22 0" fill="none" stroke="#9B7B52" stroke-width="2" stroke-linecap="round"/>
+                <ellipse cx="17" cy="36" rx="6.5" ry="4.5" fill="#9B7B52"/>
+                <path d="M14.5 35.5c1.5-1 3.5-1 5 0" fill="none" stroke="#e9e4d4" stroke-width="1.2" stroke-linecap="round"/>
+                <path d="M17 32c0-6 1-10 4-13" fill="none" stroke="#5E8B3A" stroke-width="1.8" stroke-linecap="round"/>
+                <path d="M18 25c-5 .5-8-2-9-6 5-.5 8 2 9 6zM20 21c1-5 4.5-7.5 9-7.5-1 5-4.5 7.5-9 7.5z" fill="#5E8B3A"/>
+                <circle cx="36" cy="14" r="7" fill="#dfe8cf"/>
+                <path d="M36 10.5v7M32.5 14h7" stroke="#2D4C36" stroke-width="1.8" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h2 class="h5">Adicionar projecto ou evento</h2>
+            <p class="text-secondary small mb-3">Preenche o formulário e recebe o código PHP com curl que envia o pedido à API do Baldio.</p>
+            <span class="badge text-bg-light">PHP + curl</span> <span class="badge text-bg-light">POST</span>
+          </div>
+        </a>
       </div>
     </div>
-  </main>
 
-  <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/topojson-client@3.1.0/dist/topojson-client.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
-  <script src="assets/projection.js"></script>
-  <script src="assets/app.js"></script>
+    <section class="mt-5">
+      <h2 class="h5">Fontes de dados</h2>
+      <div class="table-responsive">
+        <table class="table table-sm small align-middle">
+          <thead><tr><th>Endereço</th><th>Para quê</th><th>Onde corre</th></tr></thead>
+          <tbody>
+            <tr>
+              <td><code>https://baldio.eu/baldio.json</code></td>
+              <td>todos os projectos publicados, num formato leve</td>
+              <td>no browser (JS) ou no servidor: tem CORS aberto</td>
+            </tr>
+            <tr>
+              <td><code>https://baldio.eu/api/v1/…</code></td>
+              <td>projectos, eventos, pesquisa, tags, adicionar — <a href="https://baldio.eu/api" target="_blank" rel="noopener">documentação</a></td>
+              <td>só no servidor (PHP, curl): sem CORS</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
 </body>
 </html>

@@ -1,12 +1,21 @@
-# baldio-feed
+# Integrações do Baldio
 
-POC: página HTML estática que lista os projectos do Baldio a partir do feed público `https://baldio.eu/baldio.json` (schema `baldio/1.0`, com `Access-Control-Allow-Origin: *`).
+Site estático (GitHub Pages, `https://baldio-eu.github.io`) com exemplos de integração com o [baldio.eu](https://baldio.eu): cada página tem uma demonstração e código real para copiar.
 
-- `index.html` + `assets/app.js` — `fetch` directo ao feed; mapa + lista com pesquisa por nome/localidade e filtro por tipo. Funciona no GitHub Pages. Dois mapas à escolha (`?map=local` ou `?map=osm`):
-  - **Local** — SVG da Península com caixas para Açores/Madeira/Canárias, copiado do `~/git/mapas-pt` (`data/base.topo.json`, `assets/projection.js`); nada de tiles nem pedidos a terceiros.
-  - **OpenStreetMap** — Leaflet com tiles de tile.openstreetmap.org.
-- Nomes e cores dos tipos fixos no `app.js` (iguais aos do baldio.eu), porque o feed só traz o slug.
-- `proxy.php` — alternativa no servidor (curl + cache de 1 h em `cache/`). Só onde houver PHP (cPanel/Hetzner); usar com `index.html?source=proxy.php`.
+| Página | O quê | Dados |
+|--------|-------|-------|
+| `index.html` | catálogo das integrações e fontes de dados | — |
+| `mapa.html` | projectos num mapa, com lista e filtros; mapa local (SVG, sem APIs) ou OpenStreetMap (`?map=osm`) | `baldio.json` |
+| `projectos.html` | cartões com capa; código em JS (feed) e PHP com curl (API) | `baldio.json` (`image`, `type_name`) |
+| `adicionar.html` | formulário que gera o PHP com curl para `POST /api/v1/adicionar`; não envia nada | — |
+
+## Fontes de dados
+
+- `https://baldio.eu/baldio.json` — todos os projectos publicados, com CORS aberto (dá para ler no browser). Desde o commit `719ef4b` do Baldio traz `image` (capa: banner, senão logo; `-480` antes da extensão dá a versão pequena) e `type_name`.
+- `https://baldio.eu/api/v1/…` — API completa ([documentação](https://baldio.eu/api)), sem CORS: só do servidor.
+- `?source=` em qualquer página com dados troca o feed (ex.: `proxy.php`, a alternativa PHP com curl e cache de 1 h, só onde houver PHP).
+
+O mapa local usa `data/base.topo.json` e `assets/projection.js`, copiados do `~/git/mapas-pt` (CAOP 2024.1 da DGT e IGN).
 
 ## Correr localmente
 
@@ -14,6 +23,4 @@ POC: página HTML estática que lista os projectos do Baldio a partir do feed p�
 php -S localhost:8096
 ```
 
-## GitHub Pages
-
-Criar o repo no GitHub, fazer push do `master` e, em Settings → Pages, escolher "Deploy from a branch" → `master` / `(root)`.
+Cada push para o `master` publica no GitHub Pages em 1–2 minutos.
