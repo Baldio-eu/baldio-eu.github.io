@@ -26,7 +26,7 @@ PWA sem build: `index.html` + `manifest.json` + `sw.js` + `assets/`, d3 e topojs
 
 - A app instalada vem sem dados: na primeira abertura pede `data/projectos.json` e guarda-o no aparelho; daí em diante lê sempre essa cópia, até se carregar no botão ⟳ (em cima, ao lado da pesquisa), que o pede outra vez.
 - `#/p/{slug}` abre a página de um projecto (o "voltar" do telemóvel fecha-a); a vista lista/mapa fica guardada no aparelho.
-- Mudar um ficheiro da casca exige subir `SHELL` em `app/sw.js`.
+- Mudar um ficheiro da casca exige subir `SHELL` em `app/sw.js` e o `?v=` desse ficheiro (no `sw.js` e no `app/index.html`); nas outras páginas, subir o `?v=` do CSS/JS alterado.
 
 **Dados — cron.** `.github/workflows/app-data.yml` corre de 6 em 6 horas (e à mão em Actions → "Dados da app" → Run workflow): `php scripts/build-app-data.php` lê `GET /api/v1/projectos`, descarrega as capas e os logótipos que faltam para `app/data/img/`, apaga os que deixaram de ser usados e só faz commit se alguma coisa mudou. Correr à mão:
 

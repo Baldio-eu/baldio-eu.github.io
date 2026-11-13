@@ -5,8 +5,9 @@
 //                                      no botão de actualizar (ver fetchData em assets/app.js)
 //   imagens                            cache primeiro; a app pré-carrega capas e logótipos
 //
-// Mudar um ficheiro da casca exige subir a versão de SHELL, senão os telemóveis ficam com a antiga.
-const SHELL = 'baldio-app-shell-v4';
+// Mudar um ficheiro da casca exige subir a versão de SHELL e o ?v= desse ficheiro (aqui e no index.html),
+// senão os telemóveis ficam com a antiga.
+const SHELL = 'baldio-app-shell-v5';
 const IMG = 'baldio-app-img';
 
 // relativos a este ficheiro: a app funciona em /app/ ou em qualquer outra pasta
@@ -14,13 +15,13 @@ const SHELL_ASSETS = [
   './',
   './index.html',
   './manifest.json',
-  './assets/styles.css',
-  './assets/app.js',
+  './assets/styles.css?v=5',
+  './assets/app.js?v=5',
   './assets/icon.png',
   './assets/icon-512.png',
   './vendor/d3.min.js',
   './vendor/topojson-client.min.js',
-  '../assets/projection.js',
+  '../assets/projection.js?v=5',
   '../data/base.topo.json',
 ];
 
