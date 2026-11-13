@@ -4,7 +4,7 @@ Site estático (GitHub Pages, `https://baldio-eu.github.io`) com exemplos de int
 
 | Página | O quê | Dados |
 |--------|-------|-------|
-| `index.html` | catálogo das integrações e fontes de dados | — |
+| `index.html` | destaque da app no topo (instalar no Android, iPhone e Windows) + catálogo das integrações e fontes de dados | — |
 | `mapa.html` | projectos num mapa, com lista e filtros; mapa local (SVG, sem APIs) ou OpenStreetMap (`?map=osm`) | `baldio.json` |
 | `projectos.html` | cartões com capa; código em JS (feed) e PHP com curl (API) | `baldio.json` (`image`, `type_name`) |
 | `adicionar.html` | formulário que gera o PHP com curl para `POST /api/v1/adicionar`; não envia nada | — |

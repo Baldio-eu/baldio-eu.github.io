@@ -6,7 +6,7 @@
 //   imagens                            cache primeiro; a app pré-carrega capas e logótipos
 //
 // Mudar um ficheiro da casca exige subir a versão de SHELL, senão os telemóveis ficam com a antiga.
-const SHELL = 'baldio-app-shell-v3';
+const SHELL = 'baldio-app-shell-v4';
 const IMG = 'baldio-app-img';
 
 // relativos a este ficheiro: a app funciona em /app/ ou em qualquer outra pasta

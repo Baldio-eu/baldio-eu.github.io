@@ -523,6 +523,55 @@
     }
   });
 
+  // ---------- instalar ----------
+  // Android e Windows (Chrome, Edge): o browser avisa que dá para instalar e o botão abre o pedido dele.
+  // iPhone: não há pedido; vindo do botão da página inicial (?instalar) mostra os passos do Safari.
+  const INSTALL_KEY = 'baldio_app_install_closed';
+  const standalone = matchMedia('(display-mode: standalone)').matches || navigator.standalone === true;
+  const isIos = /iphone|ipad|ipod/i.test(navigator.userAgent) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  const askedToInstall = params.has('instalar');
+  let installEvent = null;
+
+  function showInstall() {
+    if (standalone) return;
+    let closed = false;
+    try { closed = localStorage.getItem(INSTALL_KEY) === '1'; } catch (e) { /* sem armazenamento */ }
+    if (closed && !askedToInstall) return;
+    if (installEvent) {
+      $('install-text').textContent = 'Instala o Baldio: abre como uma app e funciona sem rede.';
+      $('install-go').hidden = false;
+    } else if (isIos && askedToInstall) {
+      $('install-text').textContent = 'No Safari, toca em Partilhar e depois em «Adicionar ao ecrã principal». Depois funciona sem rede.';
+      $('install-go').hidden = true;
+    } else {
+      return;
+    }
+    $('install').hidden = false;
+  }
+
+  window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault();
+    installEvent = e;
+    showInstall();
+  });
+  window.addEventListener('appinstalled', () => {
+    installEvent = null;
+    $('install').hidden = true;
+    toast('App instalada. Já funciona sem rede.');
+  });
+  $('install-go').addEventListener('click', async () => {
+    if (!installEvent) return;
+    installEvent.prompt();
+    await installEvent.userChoice;
+    installEvent = null;
+    $('install').hidden = true;
+  });
+  $('install-close').addEventListener('click', () => {
+    $('install').hidden = true;
+    try { localStorage.setItem(INSTALL_KEY, '1'); } catch (e) { /* sem armazenamento */ }
+  });
+  showInstall();
+
   let toastTimer;
   function toast(text) {
     const el = $('toast');

@@ -17,3 +17,30 @@ body { background: #f6f4ee; }
 .project-cover-empty svg { width: 56px; height: 56px; opacity: .55; }
 .project-tile { border: 0; overflow: hidden; box-shadow: 0 1px 3px rgba(0, 0, 0, .08); }
 .project-tile a { color: inherit; text-decoration: none; }
+
+/* Destaque da app no topo da página inicial */
+.app-hero { background: radial-gradient(120% 90% at 85% 10%, #3f6a4b 0%, #2D4C36 45%, #163521 100%); color: #fff; padding: 3.5rem 0 2.5rem; overflow: hidden; }
+.app-hero-kicker { display: inline-block; font-size: .8rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: #2D4C36; background: #e8b98a; border-radius: 999px; padding: .25rem .75rem; margin-bottom: 1rem; }
+.app-hero-title { font-family: Georgia, 'Times New Roman', serif; font-weight: 700; font-size: clamp(2rem, 5vw, 3.2rem); line-height: 1.1; margin-bottom: 1rem; }
+.app-hero-title span { color: #e8b98a; }
+.app-hero-lead { font-size: 1.15rem; color: rgba(255, 255, 255, .85); max-width: 36rem; margin-bottom: 1.75rem; }
+.app-hero-cta { display: inline-flex; align-items: center; gap: .6rem; background: #fff; color: #2D4C36; font-weight: 700; border-radius: 999px; padding: .75rem 1.6rem; box-shadow: 0 6px 20px rgba(0, 0, 0, .25); }
+.app-hero-cta:hover { background: #F2EFE9; color: #163521; }
+.app-hero-cta svg { width: 22px; height: 22px; }
+.app-hero-ghost { color: #fff; border: 1px solid rgba(255, 255, 255, .45); border-radius: 999px; padding: .75rem 1.4rem; }
+.app-hero-ghost:hover { background: rgba(255, 255, 255, .1); color: #fff; }
+.app-hero-points { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: .5rem 1.25rem; color: rgba(255, 255, 255, .8); font-size: .95rem; }
+.app-hero-points li::before { content: '✓'; color: #e8b98a; font-weight: 700; margin-right: .4rem; }
+
+.phone { display: inline-block; padding: 10px; border-radius: 38px; background: #0f1a12; box-shadow: 0 24px 60px rgba(0, 0, 0, .45), inset 0 0 0 2px rgba(255, 255, 255, .08); transform: rotate(2deg); }
+.phone img { display: block; width: 270px; max-width: 62vw; height: auto; border-radius: 28px; }
+
+.app-platforms { margin-top: 2.5rem; }
+.platform { display: flex; gap: .9rem; align-items: flex-start; height: 100%; padding: 1rem 1.1rem; border-radius: 16px; background: rgba(255, 255, 255, .08); border: 1px solid rgba(255, 255, 255, .14); color: rgba(255, 255, 255, .85); text-decoration: none; font-size: .92rem; transition: background .15s; }
+.platform:hover { background: rgba(255, 255, 255, .14); color: #fff; }
+.platform svg { flex: none; width: 30px; height: 30px; color: #fff; }
+.platform b { display: block; color: #fff; font-size: 1rem; margin-bottom: .15rem; }
+.platform em { font-style: normal; color: #e8b98a; font-weight: 600; }
+.platform.is-current { background: #fff; color: #424842; border-color: #fff; }
+.platform.is-current svg, .platform.is-current b { color: #2D4C36; }
+.platform.is-current em { color: #9b5d2d; }
