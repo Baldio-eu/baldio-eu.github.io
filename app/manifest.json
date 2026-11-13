@@ -1,0 +1,19 @@
+{
+  "id": "./",
+  "name": "Baldio",
+  "short_name": "Baldio",
+  "description": "Projectos de transição em Portugal e Espanha, no mapa e em lista, mesmo sem rede.",
+  "lang": "pt",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#F9F8F6",
+  "theme_color": "#2D4C36",
+  "categories": ["travel", "education", "lifestyle"],
+  "icons": [
+    { "src": "assets/icon.png", "sizes": "256x256", "type": "image/png", "purpose": "any" },
+    { "src": "assets/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "assets/icon-maskable.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

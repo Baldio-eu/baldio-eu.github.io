@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Baldio</title>
+  <meta name="description" content="Projectos de transição em Portugal e Espanha, no mapa e em lista, mesmo sem rede.">
+  <link rel="icon" href="assets/icon.png" type="image/png">
+  <link rel="stylesheet" href="assets/styles.css">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#2D4C36">
+
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Baldio">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="apple-touch-icon" href="assets/icon-512.png">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-row">
+    <img src="assets/icon.png" alt="" width="32" height="32" class="logo">
+    <div class="search-box">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input type="search" id="search" placeholder="Nome, localidade ou etiqueta" autocomplete="off" enterkeyhint="search">
+    </div>
+    <button type="button" class="refresh" id="refresh" aria-label="Actualizar projectos" title="Actualizar projectos">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 4 23 10 17 10"/><path d="M20.5 15a9 9 0 1 1-2.1-9.4L23 10"/></svg>
+    </button>
+  </div>
+  <div class="chips" id="types" role="group" aria-label="Tipo de projecto"></div>
+</header>
+
+<main class="views">
+  <section class="view" id="view-list" aria-label="Lista de projectos">
+    <p class="meta" id="meta">A carregar…</p>
+    <div class="cards" id="list"></div>
+  </section>
+
+  <section class="view" id="view-map" aria-label="Mapa de projectos" hidden>
+    <svg id="map" role="img" aria-label="Mapa dos projectos do Baldio"></svg>
+    <div class="map-tools">
+      <button type="button" id="zoom-in" aria-label="Aproximar">+</button>
+      <button type="button" id="zoom-out" aria-label="Afastar">−</button>
+      <button type="button" id="zoom-reset" aria-label="Ver tudo">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 12a9 9 0 1 0 3-6.7"/><polyline points="3 3 3 9 9 9"/></svg>
+      </button>
+    </div>
+    <p class="map-count" id="map-count"></p>
+    <a class="preview" id="preview" hidden></a>
+  </section>
+</main>
+
+<nav class="bottombar" aria-label="Vista">
+  <div class="switch" role="tablist">
+    <button type="button" role="tab" data-mode="lista" aria-selected="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><circle cx="3.5" cy="6" r="1"/><circle cx="3.5" cy="12" r="1"/><circle cx="3.5" cy="18" r="1"/></svg>
+      Lista
+    </button>
+    <button type="button" role="tab" data-mode="mapa" aria-selected="false">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><polygon points="1 6 8 3 16 6 23 3 23 18 16 21 8 18 1 21"/><line x1="8" y1="3" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="21"/></svg>
+      Mapa
+    </button>
+  </div>
+</nav>
+
+<article class="detail" id="detail" hidden aria-live="polite"></article>
+<div class="toast" id="toast" role="status" hidden></div>
+
+<script src="vendor/d3.min.js"></script>
+<script src="vendor/topojson-client.min.js"></script>
+<script src="../assets/projection.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>
