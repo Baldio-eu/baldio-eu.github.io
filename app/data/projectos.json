@@ -1,7 +1,7 @@
 {
     "schema": "baldio-app/1.0",
     "source": "https://baldio.eu/api/v1/projectos",
-    "updated": "2026-11-15T18:50:59+00:00",
+    "updated": "2026-11-18T20:30:08+00:00",
     "count": 257,
     "tipos": {
         "alimentacao-economia-local": "Alimentação / Economia local",
@@ -10872,10 +10872,10 @@
             "outro_label": "",
             "market_offers": "Estúdio editorial para divulgação de projetos regenerativos através de entrevistas.",
             "market_needs": "Projetos a divulgar, entrevistas e colaboração.",
-            "verified": false,
+            "verified": true,
             "url": "https://baldio.eu/projectos/bloomana",
             "created_at": "2026-06-19 10:59:45",
-            "updated_at": "2026-06-25 22:23:30",
+            "updated_at": "2026-11-18 19:55:38",
             "thumb": null,
             "logo_thumb": null
         },
@@ -10921,10 +10921,10 @@
             "outro_label": "",
             "market_offers": "Agência de comunicação e marketing regenerativo.",
             "market_needs": "Clientes/projetos alinhados.",
-            "verified": false,
+            "verified": true,
             "url": "https://baldio.eu/projectos/upside-brands",
             "created_at": "2026-06-19 10:59:45",
-            "updated_at": "2026-06-25 22:23:30",
+            "updated_at": "2026-11-18 19:56:44",
             "thumb": null,
             "logo_thumb": null
         },
