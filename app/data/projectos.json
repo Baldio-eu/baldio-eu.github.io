@@ -1,7 +1,7 @@
 {
     "schema": "baldio-app/1.0",
     "source": "https://baldio.eu/api/v1/projectos",
-    "updated": "2026-11-18T20:30:08+00:00",
+    "updated": "2026-11-23T07:36:47+00:00",
     "count": 257,
     "tipos": {
         "alimentacao-economia-local": "Alimentação / Economia local",
@@ -5069,9 +5069,9 @@
             "type_name": "Investigação / Consultoria",
             "stage": null,
             "description": "Consultoria em sustentabilidade e economia circular",
-            "body": "",
-            "logo": "",
-            "banner": "",
+            "body": "<p>Raíz Circular is a Portuguese consultancy, based in Évora and Mirandela, that helps organisations of all sizes move towards more sustainable and circular business models. Joana Capela founded it. She's a biochemist who became a sustainability specialist, and she is certified in Global Reporting Initiative (GRI) sustainability reporting.</p><p><br></p><p>Clients go through a structured method:</p><p>- a preliminary diagnosis of the organisation's current practices</p><p>- identifying the critical points</p><p>- designing a strategic action plan</p><p>- guided implementation</p><p>- ongoing monitoring</p><p>- a final sustainability report following GRI standards</p><p><br></p><p>The company puts weight on staying close to clients and working hands-on. During implementation it visits their facilities every month to give technical guidance. It also runs training in sustainability and the circular economy for companies, schools and the general public, including structured online courses.</p><p><br></p><p>The work responds to growing regulatory pressure in Europe, such as anti-greenwashing legislation and the Corporate Sustainability Reporting Directive. These rules increasingly require businesses to show real, verifiable sustainability results. Raíz Circular sets out to reduce the risks of that transition for its clients while making them more competitive.</p><p><br></p><p>The company practises what it preaches. Its communications are minimalist, its website is hosted on a green server powered by 100% renewable energy, and its few printed materials use biodegradable potato starch paper.</p><p><br></p><p>Raíz Circular® is registered in the name of its founder, Joana Manuela Capela Pires. The consultancy draws on her academic background in biochemistry and her specialised training in sustainable business innovation.</p>",
+            "logo": "https://baldio.eu/uploads/2026/11/23_005413_18c09b67.jpg",
+            "banner": "https://baldio.eu/uploads/2026/11/23_005406_d6b5103e.jpg",
             "gallery": [],
             "tags": [],
             "tag_slugs": [],
@@ -5091,14 +5091,14 @@
             "instagram": "",
             "outro": "",
             "outro_label": "",
-            "market_offers": "Ajuda a diagnosticar e implementar medidas sustentaveis e circulares",
-            "market_needs": "Clientes",
+            "market_offers": "Ajuda a diagnosticar e implementar medidas sustentaveis e circulares em empresas e setor público",
+            "market_needs": "Clientes e parceiros",
             "verified": true,
             "url": "https://baldio.eu/projectos/raiz-circular",
             "created_at": "2026-07-07 15:22:16",
-            "updated_at": "2026-07-07 16:05:46",
-            "thumb": null,
-            "logo_thumb": null
+            "updated_at": "2026-11-23 00:57:53",
+            "thumb": "img/2026-11-23_005406_d6b5103e-480.jpg",
+            "logo_thumb": "img/2026-11-23_005413_18c09b67-480.jpg"
         },
         {
             "id": 172,
